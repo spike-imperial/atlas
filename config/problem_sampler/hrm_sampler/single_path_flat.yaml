@@ -1,0 +1,7 @@
+max_num_rms: ???
+max_num_states: ???
+max_num_edges: ???
+max_num_literals: ???
+num_transitions: ???
+reward_on_acceptance_only: true
+_target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler

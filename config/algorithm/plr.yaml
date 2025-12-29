@@ -1,0 +1,57 @@
+defaults:
+  - mutator: interleaved
+  - _self_
+
+name: plr
+
+buffer:
+  capacity: 50000
+  duplicate_check: false
+  minimum_fill_ratio: 0.5
+  prioritization: rank  # choices: rank, topk
+  prioritization_params:
+    temperature: 1.0
+    topk_k: 4
+  replay_prob: 0.5  # 0.8 with ACCEL (jaxued)
+  staleness_coeff: 0.1
+  use_leq_insertion: false
+  use_tie_breaking: false
+  use_replace: true
+  use_primary_score: true
+  _target_: atlas.ued.buffer.BufferManager
+
+# Score function used for training, list of tracked scores
+# for sampled batches (for comparison), and arguments for the
+# score functions
+score_functions:
+  - name: MaxMC
+    coeff: 1.0
+    args:
+      # Name of the value function used to compute the scores for
+      # score functions based on transition values and advantages
+      value_src: critic
+      # learnability_peak: 0.5
+
+# Whether to use the accumulated episode count across different rollouts
+# These counters (track completion and episode count) are used to determine
+# the learnability score. Doing across rollouts (true) is convenient when the
+# number of PPO rollout steps is the same as max. environment steps; however, when
+# the number of PPO rollout steps is higher than the max. environment steps,
+# we can set it to false since there might be enough completed rollouts to have
+# a better learnability estimate.
+use_acc_completion_count: true
+
+# Momentum coefficient for the momentum of the discounted return difference
+momentum_coeff: 0.9
+
+num_rendered_training_samples: 5
+
+# Number of problems used to display rollouts
+num_high_score_eval_problems: 5
+num_low_score_eval_problems: 5
+
+# Robust PLR
+exploratory_grad_updates: false  # false for Robust PLR
+
+# ACCEL (see mutator above)
+use_accel: false

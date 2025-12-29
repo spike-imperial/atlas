@@ -1,0 +1,24 @@
+root: m0
+transitions:
+  m0:
+    u0:
+      u1:
+        edges:
+        - call: leaf
+          formula:
+          - next_square_yellow_door_red_open
+        reward: 0.0
+    u1:
+      u2:
+        edges:
+        - call: leaf
+          formula:
+          - next_ball_yellow_square
+        reward: 0.0
+    u2:
+      uA:
+        edges:
+        - call: leaf
+          formula:
+          - next_square_yellow_key_purple
+        reward: 1.0

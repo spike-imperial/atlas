@@ -1,0 +1,24 @@
+root: m0
+transitions:
+  m0:
+    u0:
+      u3:
+        edges:
+        - call: leaf
+          formula:
+          - front_key
+        reward: 0.0
+    u3:
+      u4:
+        edges:
+        - call: leaf
+          formula:
+          - carrying_key_red
+        reward: 0.0
+    u4:
+      uA:
+        edges:
+        - call: leaf
+          formula:
+          - next_ball_yellow_key
+        reward: 1.0

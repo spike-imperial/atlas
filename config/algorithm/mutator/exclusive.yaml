@@ -1,0 +1,10 @@
+num_level_edits: 3
+num_hrm_edits: 1
+use_move_agent: true
+use_add_rm_objs: true
+use_add_rm_rooms: true
+use_add_rm_transitions: true
+use_sparse_reward: true
+max_num_args: 2
+use_hindsight_edit: false
+_target_: atlas.envs.xminigrid.mutators.aggregated.ExclusiveMutator

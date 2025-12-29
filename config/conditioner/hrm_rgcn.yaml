@@ -1,0 +1,20 @@
+defaults:
+  - literal_embedder: xminigrid_dense
+  - _self_
+
+name: rgcn
+config:
+  cache: true
+  cond_aggregation: state
+  d_edge_feat: 64
+  d_node_init_feat: 128
+  node_init: random
+  use_interrelations: false
+  rgcn_config:
+    d_hidden: 128
+    d_out: 128
+    num_layers: 5
+    use_edge_feats: [true]
+    use_layer_norm: true
+    use_node_proj: true
+_target_: atlas.conditioners.hrm_rgcn_conditioner.RGCNHRMConditioner.init_conditioner

@@ -1,0 +1,35 @@
+defaults:
+  - algorithm: plr
+  - conditioner: hrm_rgcn
+  - env: xminigrid
+  - env_params: xminigrid
+  - evaluation: defaults
+  - label_fn: xminigrid
+  - logging: defaults
+  - network: xminigrid
+  - problem_sampler: independent
+  - renderer: xminigrid
+  - training: defaults
+  - override evaluation/loader: file
+  - _self_
+
+seed: ???
+mode: training
+profile_code: false
+
+conditioner:
+  config:
+    rgcn_config:
+      num_layers: 1
+
+logging:
+  rollout:
+    num_to_visualize_per_problem: 0
+  wandb:
+    mode: online
+    entity: ???  # fill with your used entity
+
+evaluation:
+  num_rollouts_per_problem: 5
+  loader:
+    files: problems/00-validation-set

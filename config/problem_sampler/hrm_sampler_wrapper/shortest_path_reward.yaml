@@ -1,0 +1,4 @@
+additive: true
+neginf: -10
+max_iterations: 500
+_target_: atlas.hrm.sampling.wrappers.ShortestPathRewardHRMSamplerWrapper

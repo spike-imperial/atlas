@@ -1,0 +1,17 @@
+defaults:
+  - algorithm: dr
+  - conditioner: hrm_rgcn
+  - env: xminigrid
+  - env_params: xminigrid
+  - evaluation: defaults
+  - label_fn: xminigrid
+  - logging: defaults
+  - network: xminigrid
+  - renderer: xminigrid
+  - problem_sampler: independent
+  - training: defaults
+  - _self_
+
+seed: 0
+mode: training
+profile_code: false

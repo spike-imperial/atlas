@@ -1,0 +1,23 @@
+samplers:
+  - _target_: atlas.envs.xminigrid.level_sampling.single_room.XMinigridSingleRoomLevelSampler
+    height: 7
+    width: 7
+    min_objects: 1
+    max_objects: 5
+  - _target_: atlas.envs.xminigrid.level_sampling.two_rooms.XMinigridTwoRoomsLevelSampler
+    height: 7
+    width: 13
+    min_objects: 1
+    max_objects: 10
+  - _target_: atlas.envs.xminigrid.level_sampling.four_rooms.XMinigridFourRoomsLevelSampler
+    height: 13
+    width: 13
+    min_objects: 4
+    max_objects: 15
+  - _target_: atlas.envs.xminigrid.level_sampling.six_rooms.XMinigridSixRoomsLevelSampler
+    height: 13
+    width: 19
+    min_objects: 7
+    max_objects: 20
+_target_: atlas.envs.xminigrid.level_sampling.meta.XMinigridMetaLevelSampler
+_recursive_: false

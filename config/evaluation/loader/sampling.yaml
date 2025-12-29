@@ -1,0 +1,4 @@
+seed: 0
+problem_sampler: ???
+num_problems: 4
+_target_: atlas.eval_loaders.sampler.SampledEvaluationSetLoader

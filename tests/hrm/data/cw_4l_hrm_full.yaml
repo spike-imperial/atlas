@@ -1,0 +1,296 @@
+alphabet:
+  - iron
+  - table
+  - cow
+  - sugarcane
+  - wheat
+  - chicken
+  - redstone
+  - rabbit
+  - squid
+  - workbench
+  - lava
+root: m12
+transitions:
+  m0:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [ iron ]
+            call: leaf
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [ table ]
+            call: leaf
+  m1:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [ sugarcane ]
+            call: leaf
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [ table ]
+            call: leaf
+  m2:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [wheat]
+            call: leaf
+      u2:
+        reward: 0
+        edges:
+          - formula: [chicken, -wheat]
+            call: leaf
+    u1:
+      u3:
+        reward: 0
+        edges:
+          - formula: [chicken]
+            call: leaf
+    u2:
+      u3:
+        reward: 0
+        edges:
+          - formula: [wheat]
+            call: leaf
+    u3:
+      uA:
+        reward: 1
+        edges:
+          - formula: [table]
+            call: leaf
+  m3:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [sugarcane]
+            call: leaf
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [workbench]
+            call: leaf
+  m4:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [iron]
+            call: leaf
+      u2:
+        reward: 0
+        edges:
+          - formula: [redstone, -iron]
+            call: leaf
+    u1:
+      u3:
+        reward: 0
+        edges:
+          - formula: [redstone]
+            call: leaf
+    u2:
+      u3:
+        reward: 0
+        edges:
+          - formula: [iron]
+            call: leaf
+    u3:
+      uA:
+        reward: 1
+        edges:
+          - formula: [workbench]
+            call: leaf
+  m5:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [rabbit]
+            call: leaf
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [workbench]
+            call: leaf
+  m6:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [squid]
+            call: leaf
+      u2:
+        reward: 0
+        edges:
+          - formula: [chicken, -squid]
+            call: leaf
+    u1:
+      u3:
+        reward: 0
+        edges:
+          - formula: [chicken]
+            call: leaf
+    u2:
+      u3:
+        reward: 0
+        edges:
+          - formula: [squid]
+            call: leaf
+    u3:
+      uA:
+        reward: 1
+        edges:
+          - formula: [table]
+            call: leaf
+  m7:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [ ]
+            call: m0
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [ cow ]
+            call: leaf
+  m8:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: []
+            call: m3
+      u2:
+        reward: 0
+        edges:
+          - formula: [-sugarcane]
+            call: m4
+    u1:
+      u3:
+        reward: 0
+        edges:
+          - formula: []
+            call: m4
+    u2:
+      u3:
+        reward: 0
+        edges:
+          - formula: []
+            call: m3
+    u3:
+      uA:
+        reward: 1
+        edges:
+          - formula: [table]
+            call: leaf
+  m9:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: []
+            call: m3
+      u2:
+        reward: 0
+        edges:
+          - formula: [-sugarcane]
+            call: m5
+    u1:
+      u3:
+        reward: 0
+        edges:
+          - formula: []
+            call: m5
+    u2:
+      u3:
+        reward: 0
+        edges:
+          - formula: []
+            call: m3
+    u3:
+      uA:
+        reward: 1
+        edges:
+          - formula: [table]
+            call: leaf
+  m10:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: []
+            call: m1
+      u2:
+        reward: 0
+        edges:
+          - formula: [-sugarcane]
+            call: m7
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m7
+    u2:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m1
+  m11:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: []
+            call: m6
+      u2:
+        reward: 0
+        edges:
+          - formula: [-chicken, -squid]
+            call: m9
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m9
+    u2:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m6
+  m12:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: []
+            call: m2
+    u1:
+      u2:
+        reward: 0
+        edges:
+          - formula: []
+            call: m10
+    u2:
+      uA:
+        reward: 1
+        edges:
+          - formula: [workbench]
+            call: leaf

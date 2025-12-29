@@ -1,0 +1,7 @@
+defaults:
+  - loader: sampling
+  - _self_
+
+gamma: ${training.gamma}
+use_greedy: false
+num_rollouts_per_problem: 1

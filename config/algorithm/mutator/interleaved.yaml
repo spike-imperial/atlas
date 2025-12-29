@@ -1,0 +1,15 @@
+min_edits: 7
+max_edits: 10
+level_cfg:
+  enabled: true
+  use_move_agent: true
+  use_add_rm_objs: true
+  use_add_rm_rooms: true
+hrm_cfg:
+  enabled: true
+  use_add_rm_transitions: true
+hindsight_cfg:
+  enabled: true
+use_sparse_reward: true
+max_num_args: 2
+_target_: atlas.envs.xminigrid.mutators.aggregated.InterleavedLevelHRMMutator

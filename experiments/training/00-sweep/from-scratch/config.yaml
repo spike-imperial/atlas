@@ -1,0 +1,48 @@
+defaults:
+  - algorithm: plr
+  - conditioner: hrm_rgcn
+  - env: xminigrid
+  - env_params: xminigrid
+  - evaluation: defaults
+  - label_fn: xminigrid
+  - logging: defaults
+  - network: xminigrid
+  - problem_sampler: independent
+  - renderer: xminigrid
+  - training: defaults
+  - override evaluation/loader: file
+  - override problem_sampler/hrm_sampler: single_path_flat
+  - override problem_sampler/level_sampler: single_room
+  - _self_
+
+seed: ???
+mode: training
+profile_code: false
+
+algorithm:
+  use_accel: true
+  buffer:
+    replay_prob: 0.99
+
+logging:
+  rollout:
+    num_to_visualize_per_problem: 0
+  wandb:
+    mode: online
+    entity: ???  # fill with your used entity
+
+evaluation:
+  num_rollouts_per_problem: 5
+  loader:
+    files: problems/00-validation-set
+
+problem_sampler:
+  hrm_sampler:
+    max_num_rms: 1
+    max_num_states: 6
+    max_num_edges: 1
+    max_num_literals: 1
+    num_transitions: 5
+  level_sampler:
+    min_objects: 1
+    max_objects: 1

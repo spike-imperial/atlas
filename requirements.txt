@@ -1,0 +1,60 @@
+## Numerical Computing ##
+numpy>=1.23.0
+scipy
+pandas
+arrgh 
+tqdm
+
+
+# JAX ecosystem with CUDA support
+# --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+jax[cuda12_pip]>=0.4.27,<0.4.32
+jaxlib>=0.4.27,<0.4.32
+
+
+## Visualization ##
+matplotlib
+graphviz
+opencv-python
+plotly==5.24.1
+seaborn
+rliable
+
+
+## Deep learning ##
+chex
+distrax
+optax>=0.2.3
+# tensorflow_probability
+
+
+## Environments ##
+xminigrid
+
+
+## Notebooks ##
+chardet
+jupyter
+
+
+## Testing ##
+pytest
+pytest-subtests
+
+
+## Instrumentation ##
+dacite # re-instantiate dataclasses
+hydra-core>=1.3.0 # configuration files
+jax-tqdm # progress bars that use debugging traces to work inside jitted functions (some overhead)
+wandb>=0.15.0,<=0.22.3 # logging
+moviepy>=1.0.3 # wandb video
+imageio # wandb video
+meinsweeper # running sweeps
+orbax-checkpoint>=0.6.1
+watchdog
+
+
+# Core dependencies
+omegaconf>=2.3.0
+flax>=0.7.0,<=0.10.1
+gymnasium>=0.28.0

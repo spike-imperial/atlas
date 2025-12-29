@@ -1,0 +1,20 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-no-hindsight-accel-scratch
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/06-mutation-types/accel-scratch
+  config-name:
+    value: config.yaml
+
+  seed:
+    values: [0, 1, 2, 3, 4]
+
+  algorithm.mutator.hindsight_cfg.enabled:
+    value: false

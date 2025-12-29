@@ -1,0 +1,29 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-sweep-plr
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/00-sweep/from-full
+  config-name:
+    value: config.yaml
+
+  seed:
+    values: [0, 1]
+
+  network.use_rnn_cond:
+    values: [true, false]
+
+  algorithm.buffer.capacity:
+    values: [25000, 50000]
+
+  algorithm.buffer.replay_prob:
+    values: [0.5, 0.9]
+
+  training.ent_coef:
+    values: [0.0, 0.001, 0.01]

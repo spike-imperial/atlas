@@ -1,0 +1,5 @@
+height: 19
+width: 19
+min_objects: 25
+max_objects: 25
+_target_: atlas.envs.xminigrid.level_sampling.nine_rooms.XMinigridNineRoomsLevelSampler

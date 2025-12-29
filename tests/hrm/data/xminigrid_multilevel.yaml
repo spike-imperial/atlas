@@ -1,0 +1,117 @@
+alphabet:
+  - front_ball_red
+  - front_ball_green
+  - front_ball_blue
+  - front_ball_purple
+  - front_ball_yellow
+  - front_ball_grey
+  - front_ball
+  - front_square_red
+  - front_square_green
+  - front_square_blue
+  - front_square_purple
+  - front_square_yellow
+  - front_square_grey
+  - front_square
+  - front_key_red
+  - front_key_green
+  - front_key_blue
+  - front_key_purple
+  - front_key_yellow
+  - front_key_grey
+  - front_key
+  - carrying_ball_red
+  - carrying_ball_green
+  - carrying_ball_blue
+  - carrying_ball_purple
+  - carrying_ball_yellow
+  - carrying_ball_grey
+  - carrying_ball
+  - carrying_square_red
+  - carrying_square_green
+  - carrying_square_blue
+  - carrying_square_purple
+  - carrying_square_yellow
+  - carrying_square_grey
+  - carrying_square
+  - carrying_key_red
+  - carrying_key_green
+  - carrying_key_blue
+  - carrying_key_purple
+  - carrying_key_yellow
+  - carrying_key_grey
+  - carrying_key
+root: m0
+transitions:
+  m0:
+    u0:
+      u2:
+        reward: 0
+        edges:
+          - formula: []
+            call: m1
+    u2:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m2
+  m1:
+    u0:
+      uA:
+        reward: 1
+        edges:
+          - formula: []
+            call: m3
+  m2:
+    u0:
+      u1:
+        reward: 0
+        edges:
+          - formula: [front_ball_red]
+            call: leaf
+      u2:
+        reward: 0
+        edges:
+          - formula: [carrying_key_red]
+            call: leaf
+    u1:
+      u0:
+        reward: 0
+        edges:
+          - formula: [carrying_square_red]
+            call: leaf
+      u2:
+        reward: 0
+        edges:
+          - formula: [carrying_ball_green]
+            call: leaf
+    u2:
+      u0:
+        reward: 0
+        edges:
+          - formula: [front_key_red]
+            call: leaf
+      u1:
+        reward: 0
+        edges:
+          - formula: [front_ball, -front_ball_yellow]
+            call: leaf
+      uA:
+        reward: 1
+        edges:
+          - formula: [front_ball_yellow]
+            call: leaf
+  m3:
+    u0:
+      u2:
+        reward: 0
+        edges:
+          - formula: [carrying_ball_purple]
+            call: leaf
+    u2:
+      uA:
+        reward: 1
+        edges:
+          - formula: [carrying_ball]
+            call: leaf

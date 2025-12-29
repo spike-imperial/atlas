@@ -1,0 +1,28 @@
+# For UED:
+#  keep num_steps * num_outer_steps above the max. episode length to sample
+#  full trajectories for the buffer
+#
+# Sources:
+#  Jiang et al. (2021). Prioritized Level Replay.
+#  Coward et al. (2024). JaxUED: A simple and usable UED library in Jax.
+#  Matthews et al. (2024). Craftax: A Lightning-Fast Benchmark for Open-Ended Reinforcement Learning.
+#  https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/
+
+num_envs: 4096
+num_steps: ${env_params.max_steps}  # steps taken in environment before updating
+num_outer_steps: 1
+update_epochs: 4
+num_minibatches: ${get_num_minibatches:${.num_envs}}
+total_timesteps: 4_194_304_000
+lr: 5e-5
+lr_schedule: false
+adam_eps: 1e-5
+clip_eps: 0.2
+gamma: 0.99
+gae_lambda: 0.9
+ent_coef: 0.01
+vf_coef: 0.5  # can be a dictionary and specify different coefficients for different value functions involved
+max_grad_norm: 0.5
+num_updates: null  # determine it through `total_timesteps` and other hyperparameters
+advantage_src: critic  # the critic value fn w.r.t. the policy is updated (value fn whose advantages are taken)
+use_hrm_reward: true

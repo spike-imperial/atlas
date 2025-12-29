@@ -1,0 +1,5 @@
+height: 7
+width: 10
+min_objects: 10
+max_objects: 10
+_target_: atlas.envs.xminigrid.level_sampling.two_rooms.XMinigridTwoRoomsLevelSampler

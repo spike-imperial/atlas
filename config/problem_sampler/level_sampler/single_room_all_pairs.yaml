@@ -1,0 +1,3 @@
+height: ${env_params.height}
+width: ${env_params.width}
+_target_: atlas.envs.xminigrid.level_sampling.single_room.XMinigridSingleRoomAllPairsLevelSampler

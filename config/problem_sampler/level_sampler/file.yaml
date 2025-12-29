@@ -1,0 +1,2 @@
+files: ???
+_target_: atlas.envs.xminigrid.level_sampling.file.XMinigridFileLevelSampler

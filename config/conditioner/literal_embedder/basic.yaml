@@ -1,0 +1,3 @@
+d_feat: ${..config.d_edge_feat}
+_target_: atlas.envs.common.literal_embedder.BasicLiteralEmbedder.init_embedder
+_partial_: true

@@ -1,0 +1,20 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-vanilla-conditioning-plr-max-states-10
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/02-vanilla-conditioning/plr
+  config-name:
+    value: config.yaml
+
+  seed:
+    values: [0, 1, 2, 3, 4]
+
+  problem_sampler.hrm_sampler.max_num_states:
+    value: 10

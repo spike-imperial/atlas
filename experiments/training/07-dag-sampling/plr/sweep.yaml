@@ -1,0 +1,20 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-dag-plr
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/07-dag-sampling/plr
+  config-name:
+    value: config.yaml
+
+  seed:
+    values: [0, 1, 2, 3, 4]
+
+  problem_sampler:
+    values: [independent, xminigrid_level_cond]

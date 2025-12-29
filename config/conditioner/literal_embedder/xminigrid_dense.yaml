@@ -1,0 +1,4 @@
+d_feat: ${..config.d_edge_feat}
+use_true: true
+_target_: atlas.envs.xminigrid.literal_embedders.dense.XMinigridDenseLiteralEmbedder.init_embedder
+_partial_: true

@@ -1,0 +1,31 @@
+max_num_rms: 1
+max_num_states: 6
+max_num_edges: 1
+max_num_literals: 1
+samplers:
+  - num_transitions: 1
+    reward_on_acceptance_only: true
+    _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+  - num_transitions: 2
+    reward_on_acceptance_only: true
+    _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+  - num_transitions: 3
+    reward_on_acceptance_only: true
+    _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+  - num_transitions: 4
+    reward_on_acceptance_only: true
+    _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+  - num_transitions: 5
+    reward_on_acceptance_only: true
+    _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+_target_: atlas.hrm.sampling.meta.MetaHRMSampler
+_recursive_: false
+
+# Example
+# samplers:
+#   - num_transitions: 2
+#     reward_on_acceptance_only: true
+#     _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler
+#   - num_transitions: 3
+#     reward_on_acceptance_only: true
+#     _target_: atlas.hrm.sampling.single_path_flat.SinglePathFlatHRMSampler

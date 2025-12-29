@@ -1,0 +1,35 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-sweep-accel-extended
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/00-sweep/from-full
+  config-name:
+    value: config.yaml
+
+  algorithm.use_accel:
+    value: true
+
+  algorithm.mutator.min_edits:
+    values: [3, 5, 7, 10]
+
+  seed:
+    values: [0, 1]
+
+  network.use_rnn_cond:
+    values: [true, false]
+
+  algorithm.buffer.capacity:
+    value: 50000
+
+  algorithm.buffer.replay_prob:
+    value: 0.9
+
+  training.ent_coef:
+    values: [0.001, 0.01]

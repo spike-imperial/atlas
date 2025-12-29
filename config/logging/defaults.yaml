@@ -1,0 +1,26 @@
+run_name: ???
+run_id: null
+interval: 10  # every how many updates to log
+rollout:
+  visualization_length: ${env_params.max_steps}
+  num_to_visualize_per_problem: ${evaluation.num_rollouts_per_problem}
+  show_on_termination_only: true
+checkpoint:
+  training:  # only used for mode=training (i.e. not "training")
+    loading:
+      path: null
+      step: null
+      mode: null  # continue or reset
+    storing:
+      enabled: true
+      max_number: 2
+      upload: true
+  evaluation:  # only used for mode=evaluation (i.e. not "training")
+    path: null
+    step: null
+wandb:
+  project: atlas
+  entity: ???
+  group: ???
+  mode: disabled  # online, offline, disabled
+  # dir: "/tmp/wandb/"

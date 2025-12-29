@@ -1,0 +1,13 @@
+files:
+  - level_path: ???
+    hrm_path: ???
+  - level_path: ???
+    hrm_path: ???
+level_loading_fn:
+  _target_: atlas.envs.xminigrid.level.XMinigridLevel.from_file
+  _partial_: true
+max_num_rms: ???
+max_num_states: ???
+max_num_edges: ???
+max_num_literals: ???
+_target_: atlas.problem_samplers.file.FileProblemSampler

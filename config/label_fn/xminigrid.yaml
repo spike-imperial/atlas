@@ -1,0 +1,7 @@
+use_front_props: true
+use_carrying_props: true
+use_next_to_props: true
+labelable_non_door_obj_types: ${env_params.non_door_obj_types}
+labelable_door_obj_types: ${env_params.door_obj_types}
+labelable_color_types: ${env_params.color_types}
+_target_: atlas.envs.xminigrid.labeling_function.XMinigridLabelingFunction

@@ -1,0 +1,21 @@
+alphabet:
+  - a
+  - b
+  - c
+root: m0
+transitions:
+  m0:
+    u0:
+      u1:
+        reward: 0.5
+        edges:
+          - formula: [a]
+            call: leaf
+          - formula: [c]
+            call: leaf
+    u1:
+      uA:
+        reward: 1
+        edges:
+          - formula: [b]
+            call: leaf

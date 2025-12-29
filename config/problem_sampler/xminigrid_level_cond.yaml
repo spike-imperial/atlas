@@ -1,0 +1,8 @@
+defaults:
+  - hrm_sampler: meta
+  - level_sampler: meta
+  - hrm_sampler_wrapper: dummy
+  - _self_
+
+_target_: atlas.envs.xminigrid.problem_sampling.level_conditioned.XMinigridLevelConditionedProblemSampler.build
+_recursive_: false

@@ -1,0 +1,26 @@
+program: scripts/execute_run.py
+method: grid
+name: final-experiments-mutation-types-accel-full
+entity: ???  # fill with your used entity
+project: atlas
+metric:
+  name: eval/episode_solve_rate/mean
+  goal: maximize
+
+parameters:
+  config-path:
+    value: ../experiments/training/06-mutation-types/accel-full
+  config-name:
+    value: config.yaml
+
+  seed:
+    values: [0, 1, 2, 3, 4]
+
+  mutations_enabled:
+    values: [
+      [true, true, false],
+      [true, false, false],
+      [true, false, true],
+      [false, true, true],
+      [false, true, false]
+    ]

@@ -1,0 +1,10 @@
+height: 13
+width: 19
+view_size: 5
+max_steps: 512
+use_ego_obs: true
+use_full_obs: false
+non_door_obj_types: ${xminigrid_obj:[ball, square, key]}
+door_obj_types: ${xminigrid_status:[closed, locked, open]}
+color_types: ${xminigrid_col:[red, green, blue, purple, yellow, grey]}
+_target_: atlas.envs.xminigrid.types.XMinigridEnvParams

@@ -1,0 +1,32 @@
+root: m0
+transitions:
+  m0:
+    u0:
+      u1:
+        edges:
+        - call: leaf
+          formula:
+          - next_ball_door
+          - -carrying_ball_yellow
+        reward: 0.0
+      u4:
+        edges:
+        - call: leaf
+          formula:
+          - -next_ball_door
+          - carrying_ball_yellow
+        reward: 0.0
+    u1:
+      u4:
+        edges:
+        - call: leaf
+          formula:
+          - next_ball_yellow_door_purple
+        reward: 0.0
+    u4:
+      uA:
+        edges:
+        - call: leaf
+          formula:
+          - next_ball_square
+        reward: 1.0

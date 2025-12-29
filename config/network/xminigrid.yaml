@@ -1,0 +1,14 @@
+use_actions: true
+action_emb_dim: 16
+rnn_cell_type: gru
+rnn_hidden_dim: 512
+head_hidden_dim: 256
+pre_ac_hidden_dim: -1
+use_rewards: false
+use_obj_encoder: true
+use_rnn_cond: true
+num_ac_layers: 2
+use_relu_ac: true
+cnn_features: [32, 64, 64]
+cnn_padding: SAME
+_target_: atlas.envs.xminigrid.networks.network.XMinigridNetwork

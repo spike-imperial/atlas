@@ -1,0 +1,2 @@
+name: dummy
+_target_: atlas.conditioners.dummy_conditioner.DummyConditioner

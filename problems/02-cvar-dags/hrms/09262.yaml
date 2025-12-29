@@ -1,0 +1,54 @@
+root: m0
+transitions:
+  m0:
+    u0:
+      u1:
+        edges:
+        - call: leaf
+          formula:
+          - carrying_square
+          - -front_square
+        reward: 0.0
+      u2:
+        edges:
+        - call: leaf
+          formula:
+          - -carrying_square
+          - front_square
+        reward: 0.0
+    u1:
+      u2:
+        edges:
+        - call: leaf
+          formula:
+          - next_square_blue_key
+        reward: 0.0
+    u2:
+      u3:
+        edges:
+        - call: leaf
+          formula:
+          - carrying_square
+          - -carrying_square_blue
+        reward: 0.0
+      u4:
+        edges:
+        - call: leaf
+          formula:
+          - -carrying_square
+          - carrying_square_blue
+        reward: 0.0
+    u3:
+      u4:
+        edges:
+        - call: leaf
+          formula:
+          - next_square_blue_key_purple
+        reward: 0.0
+    u4:
+      uA:
+        edges:
+        - call: leaf
+          formula:
+          - carrying_key_purple
+        reward: 1.0

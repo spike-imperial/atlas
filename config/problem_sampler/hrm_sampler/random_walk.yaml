@@ -1,0 +1,16 @@
+max_num_rms: ???
+max_num_gen_rms: ${problem_sampler.hrm_sampler.max_num_rms}
+max_num_states: ???
+max_num_gen_states: ${problem_sampler.hrm_sampler.max_num_states}
+max_num_edges: ???
+max_num_literals: ???
+enforce_mutex: true
+enforce_sequentiality: true
+splittiness: 0.5
+avg_state_connectivity: 2
+use_transition_compat_matrix: false
+use_call_compat_matrix: false
+eps: 1.0
+reward_shaping: false
+gamma: ${training.gamma}
+_target_: atlas.hrm.sampling.random_walk.RandomWalkHRMSampler
